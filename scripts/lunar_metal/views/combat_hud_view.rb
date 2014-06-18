@@ -1,4 +1,4 @@
-class LunarMetal::Hud
+class CombatHudView < Moon::RenderContainer
 
   attr_reader :game
 
@@ -10,8 +10,8 @@ class LunarMetal::Hud
 
   end
 
-  def render
-
+  def render(x=0, y=0, z=0)
+    super x, y, z
   end
 
 end

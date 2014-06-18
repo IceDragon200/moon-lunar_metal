@@ -1,12 +1,10 @@
-class LunarMetal::Game
+module LunarMetal
+  class Game < Moon::BaseModel
 
-  attr_reader :world
+    class << self
+      attr_accessor :current
+    end
+    field :commander, type: Commander, default: ->(t,s){ t.new }
 
-  def initialize
-    @world = LunarMetal::World.new
   end
-
-  def update(delta)
-  end
-
 end
