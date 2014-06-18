@@ -1,0 +1,24 @@
+---
+scheme: "Atelier Dune"
+author: "Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/dune)"
+format: "hex.RRGGBB"
+colors:
+  # due to some YAML loading retardation, hex strings are appended with
+  # H to prevent them from being cast as numbers, or some other weird thing
+  base00: "H20201d"
+  base01: "H292824"
+  base02: "H6e6b5e"
+  base03: "H7d7a68"
+  base04: "H999580"
+  base05: "Ha6a28c"
+  base06: "He8e4cf"
+  base07: "Hfefbec"
+  base08: "Hd73737"
+  base09: "Hb65611"
+  base0A: "Hcfb017"
+  base0B: "H60ac39"
+  base0C: "H1fad83"
+  base0D: "H6684e1"
+  base0E: "Hb854d4"
+  base0F: "Hd43552"
+...

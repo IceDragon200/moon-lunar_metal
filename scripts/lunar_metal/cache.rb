@@ -1,5 +1,11 @@
 class Cache < Moon::CacheBase
 
+  branch :palette do
+    lambda do |*args|
+      Aach.load_palette(YAML.load(File.read("data/palette.yml")))
+    end
+  end
+
   branch :tileset do
     lambda do |filename, *args|
       Moon::Spritesheet.new "resources/tilesets/#{filename}", *args
