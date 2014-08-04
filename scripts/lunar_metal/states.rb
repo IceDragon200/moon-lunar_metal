@@ -1,6 +1,0 @@
-require "scripts/lunar_metal/states/base"
-require "scripts/lunar_metal/states/build"
-require "scripts/lunar_metal/states/combat"
-require "scripts/lunar_metal/states/landing"
-require "scripts/lunar_metal/states/title"
-require "scripts/lunar_metal/states/splash"
