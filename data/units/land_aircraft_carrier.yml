@@ -1,0 +1,13 @@
+---
+name: Land Aircraft Carrier
+health: 800
+weight: heavy
+move_type: land
+move_range: 3
+attack_range: 0
+attack_count: 0
+damage: 0
+armor: 70
+effects:
+  - type: restore.ammo
+    value: 1

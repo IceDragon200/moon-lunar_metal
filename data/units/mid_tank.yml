@@ -1,0 +1,10 @@
+---
+name: Mid Tank
+health: 400
+weight: mid
+move_type: land
+move_range: 3
+attack_range: 2
+attack_count: 1
+damage: 30
+armor: 25

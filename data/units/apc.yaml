@@ -1,0 +1,13 @@
+---
+name: APC
+health: 300
+weight: mid
+move_type: land
+move_range: 5
+attack_range: 1
+attack_count: 1
+damage: 0
+armor: 0
+effect:
+  - type: "transport.infantry"
+    value: 8

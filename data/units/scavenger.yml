@@ -1,0 +1,12 @@
+---
+name: Scavenger
+health: 300
+weight: mid
+move_type: land
+move_range: 3
+attack_range: 1
+attack_count: 1
+damage: 0
+armor: 0
+effect:
+  - type: "reclaim.vehicle"
