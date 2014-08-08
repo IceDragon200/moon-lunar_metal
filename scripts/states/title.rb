@@ -7,16 +7,19 @@ module States
       @controller = TitleController.new
 
       cache = LunarMetal.cache
-      pal = cache.palette
+      pal = LunarMetal.data.palette
       @selected_color = pal["base0C"]
       @unselected_color = pal["base07"]
       @title_text = Moon::Text.new("Lunar Metal", cache.font("handel_gothic", 64))
       @title_text.color = pal["base0D"]
-      @commands = [Command.new(:campaign, "Campaign"),
-                   Command.new(:skirmish, "Skirmish"),
-                   Command.new(:load_game, "Load Game"),
-                   Command.new(:options, "Options"),
-                   Command.new(:quit, "Quit")
+      @commands = [
+                    Command.new(:campaign, "Campaign"),
+                    Command.new(:skirmish, "Skirmish"),
+                    Command.new(:load_game, "Load Game"),
+                    Command.new(:options, "Options"),
+                    Command.new(:map, "Map"),
+                    Command.new(:unit_viewer, "Unit Viewer"),
+                    Command.new(:quit, "Quit"),
                    ]
       @command_texts = @commands.map do |command|
         Moon::Text.new(command.string, cache.font("handel_gothic", 24))
@@ -61,6 +64,12 @@ module States
           @controller.load_game
         when :options
           @controller.options
+
+        when :map
+          @controller.map
+        when :unit_viewer
+          @controller.unit_viewer
+
         when :quit
           @controller.quit
         end
