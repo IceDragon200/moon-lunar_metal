@@ -13,6 +13,8 @@ class Cache < Moon::CacheBase
     fonts = {}
     fonts["handel_gothic"] = loader.call("Handel Gothic.ttf")
     fonts["uni0553"] = loader.call("uni0553/uni0553-webfont.ttf")
+
+    fonts["system"] = fonts["uni0553"]
     fonts
   end
 end
