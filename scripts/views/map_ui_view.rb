@@ -42,15 +42,20 @@ end
 
 class MapUiView < StateView
   attr_reader :unit_action
+  attr_reader :cursor_text
   attr_reader :resources
 
   def init_elements
     super
     @unit_action = UnitActionHud.new
     @resources = ResourcesHud.new
+    @cursor_text = Moon::Text.new("", LunarMetal.cache.font("uni0553", 16))
+
+    @cursor_text.position.y += 48
 
     add(@unit_action)
     add(@resources)
+    add(@cursor_text)
   end
 end
 
@@ -59,11 +64,15 @@ class MapUiViewController
     @view = view
   end
 
-  def update_metal(metal)
+  def metal=(metal)
     @view.resources.metal_text.string = metal.to_s
   end
 
-  def update_energy(energy)
+  def energy=(energy)
     @view.resources.energy_text.string = energy.to_s
+  end
+
+  def cursor_position=(v2)
+    @view.cursor_text.string = v2.to_a.join(", ")
   end
 end
