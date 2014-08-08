@@ -1,0 +1,16 @@
+---
+traits:
+  tooltip:
+    name: Assault Trooper
+    description: ""
+  unit_group:
+    type: infantry
+  health:
+    hp: 100
+  mobile:
+    move: 4
+    terrain: land
+  render:
+    looks: iassault_trooper
+"&class": Unit
+...

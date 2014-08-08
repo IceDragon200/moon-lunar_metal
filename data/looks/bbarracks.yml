@@ -1,0 +1,17 @@
+---
+spritesheet:
+  filename: "4x/building-barracks_4x.png"
+  cell_width: 160
+  cell_height: 160
+  frames:
+    sit_left:
+    - 3
+    sit_right:
+    - 1
+    sit_up:
+    - 0
+    sit_down:
+    - 2
+  "&class": SpritesheetInfo
+"&class": VisualInfo
+...

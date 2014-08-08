@@ -1,0 +1,25 @@
+---
+spritesheet:
+  filename: "4x/unit-ranger_4x.png"
+  cell_width: 32
+  cell_height: 32
+  frames:
+    sit_left:
+    - 3
+    sit_right:
+    - 1
+    sit_up:
+    - 0
+    sit_down:
+    - 2
+    move_left:
+    - 3
+    move_right:
+    - 1
+    move_up:
+    - 0
+    move_down:
+    - 2
+  "&class": SpritesheetInfo
+"&class": VisualInfo
+...

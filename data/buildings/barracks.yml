@@ -1,0 +1,37 @@
+---
+traits:
+  tooltip:
+    name: Barracks
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - "SSSS "
+        - "SSSo."
+        - "SSSS "
+        - "SSSS "
+      up:
+        map:
+        - " .  "
+        - "SoSS"
+        - "SSSS"
+        - "SSSS"
+        - "SSSS"
+      down:
+        map:
+        - "SSSS"
+        - "SSSS"
+        - "SSSS"
+        - "SSoS"
+        - "  . "
+      left:
+        map:
+        - " SSSS"
+        - " SSSS"
+        - ".oSSS"
+        - " SSSS"
+  render:
+    looks: bbarracks
+"&class": Unit
+...

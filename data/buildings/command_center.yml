@@ -1,0 +1,45 @@
+---
+traits:
+  tooltip:
+    name: Command Center
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - " SSSS "
+        - " SSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - " SSSSS"
+        - " SSSS "
+      up:
+        map:
+        - " SSSSS "
+        - "SSSSSSS"
+        - "SSSSSSS"
+        - "SSSSSSS"
+        - "SSSSSSS"
+        - "  SSS  "
+      down:
+        map:
+        - "  SSS  "
+        - "SSSSSSS"
+        - "SSSSSSS"
+        - "SSSSSSS"
+        - "SSSSSSS"
+        - " SSSSS "
+      left:
+        map:
+        - " SSSS "
+        - "SSSSS "
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSS "
+        - " SSSS "
+  render:
+    looks: bcommand_center
+"&class": Unit
+...

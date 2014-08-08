@@ -1,0 +1,16 @@
+---
+traits:
+  tooltip:
+    name: Sniper
+    description: ""
+  unit_group:
+    type: infantry
+  health:
+    hp: 40
+  mobile:
+    move: 4
+    terrain: land
+  render:
+    looks: isniper
+"&class": Unit
+...

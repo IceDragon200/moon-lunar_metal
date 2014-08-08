@@ -1,0 +1,16 @@
+---
+traits:
+  tooltip:
+    name: Submarine
+    description: ""
+  unit_group:
+    type: naval
+  health:
+    hp: 200
+  mobile:
+    move: 4
+    terrain: water
+  render:
+    looks: nsubmarine
+"&class": Unit
+...

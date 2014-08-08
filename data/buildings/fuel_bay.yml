@@ -1,0 +1,43 @@
+---
+traits:
+  tooltip:
+    name: Fuel Bay
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSo."
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+      up:
+        map:
+        - "SS.SSS"
+        - "SSoSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+      down:
+        map:
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSoSS"
+        - "SSS.SS"
+      left:
+        map:
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - ".oSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+  render:
+    looks: bfuel_bay
+"&class": Unit
+...

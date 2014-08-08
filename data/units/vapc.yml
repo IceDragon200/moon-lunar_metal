@@ -1,0 +1,16 @@
+---
+traits:
+  tooltip:
+    name: APC
+    description: ""
+  unit_group:
+    type: vehicle
+  health:
+    hp: 300
+  mobile:
+    move: 4
+    terrain: land
+  render:
+    looks: vapc
+"&class": Unit
+...

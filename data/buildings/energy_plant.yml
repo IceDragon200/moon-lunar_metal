@@ -1,0 +1,31 @@
+---
+traits:
+  tooltip:
+    name: Energy Plant
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - "SSS"
+        - "SSS"
+        - "SSS"
+      up:
+        map:
+        - "SSS"
+        - "SSS"
+        - "SSS"
+      down:
+        map:
+        - "SSS"
+        - "SSS"
+        - "SSS"
+      left:
+        map:
+        - "SSS"
+        - "SSS"
+        - "SSS"
+  render:
+    looks: benergy_plant
+"&class": Unit
+...

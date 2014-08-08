@@ -1,0 +1,23 @@
+---
+# aircrafts
+- agunship
+- afighter
+- astriker
+# infantry
+- iassault_trooper
+- iengineer
+- irocketeer
+- iscout
+- isniper
+- itrooper
+# navy
+- ndestroyer
+- nsubmarine
+- ncruiser
+# vehicles
+- vapc
+- vartillery
+- vraider
+- vranger
+- vtank
+...

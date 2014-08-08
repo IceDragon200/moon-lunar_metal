@@ -1,0 +1,28 @@
+---
+traits:
+  tooltip:
+    name: Striker
+    description: ""
+  unit_group:
+    type: aircraft
+  health:
+    hp: 200
+  fueled:
+    fuel: 100
+    type: gas
+  energized:
+    energy: 10
+  mobile:
+    move: 4
+    terrain: air
+  armor:
+    type: heavy
+  abilities:
+  armaments:
+  - weapon: 120mm
+  valued:
+    cost: 500
+  render:
+    looks: astriker
+"&class": Unit
+...

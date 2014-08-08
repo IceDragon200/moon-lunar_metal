@@ -1,0 +1,37 @@
+---
+spritesheet:
+  filename: "4x/unit-assault_trooper_4x.png"
+  cell_width: 32
+  cell_height: 32
+  frames:
+    sit_left:
+    - 6
+    sit_right:
+    - 0
+    sit_up:
+    - 9
+    sit_down:
+    - 3
+    move_left:
+    - 6
+    - 7
+    - 8
+    move_right:
+    - 0
+    - 1
+    - 2
+    move_up:
+    - 9
+    - 10
+    - 11
+    move_down:
+    - 3
+    - 4
+    - 5
+    dead:
+    - 12
+    stealth:
+    - 13
+  "&class": SpritesheetInfo
+"&class": VisualInfo
+...

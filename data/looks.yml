@@ -1,0 +1,32 @@
+---
+# aircaft
+- afighter
+- agunship
+- astriker
+# buildings
+- bammo_bay
+- bbarracks
+- bcommand_center
+- benergy_plant
+- bfuel_bay
+- bmed_bay
+- bmetal_refinery
+- bvehicle_factory
+# infantry
+- iassault_trooper
+- iengineer
+- irocketeer
+- iscout
+- isniper
+- itrooper
+# navy
+- ncruiser
+- ndestroyer
+- nsubmarine
+# vehicles
+- vapc
+- vartillery
+- vraider
+- vranger
+- vtank
+...

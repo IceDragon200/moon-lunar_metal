@@ -1,0 +1,43 @@
+---
+traits:
+  tooltip:
+    name: Metal Refinery
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - "SSSSSS "
+        - "SSSSSSs"
+        - "SSSo.s "
+        - "SSSSSSs"
+        - "SSSSSS "
+      up:
+        map:
+        - " s s "
+        - "SSsSS"
+        - "SS.SS"
+        - "SSoSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSSSS"
+      down:
+        map:
+        - "SSSSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSoSS"
+        - "SS.SS"
+        - "SSsSS"
+        - " s s "
+      left:
+        map:
+        - " SSSSSS"
+        - "sSSSSSS"
+        - " s.oSSS"
+        - "sSSSSSS"
+        - " SSSSSS"
+  render:
+    looks: bmetal_refinery
+"&class": Unit
+...

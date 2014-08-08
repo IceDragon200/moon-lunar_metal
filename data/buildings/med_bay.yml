@@ -1,0 +1,41 @@
+---
+traits:
+  tooltip:
+    name: Medical Bay
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - "SSSSS "
+        - "SSSSS "
+        - "SSSSo."
+        - "SSSSS "
+        - " SSSS "
+      up:
+        map:
+        - "  .  "
+        - "SSoSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSSS "
+      down:
+        map:
+        - " SSSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSoSS"
+        - "  .  "
+      left:
+        map:
+        - " SSSS "
+        - " SSSSS"
+        - ".oSSSS"
+        - " SSSSS"
+        - " SSSSS"
+  render:
+    looks: bmed_bay
+"&class": Unit
+...

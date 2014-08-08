@@ -1,0 +1,43 @@
+---
+traits:
+  tooltip:
+    name: Vehicle Factory
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - "SSSSSS "
+        - "SSSSsss"
+        - "SSSosss"
+        - "SSSSsss"
+        - "SSSSSS "
+      up:
+        map:
+        - " sss "
+        - "SsssS"
+        - "SsssS"
+        - "SSoSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSSSS"
+      down:
+        map:
+        - "SSSSS"
+        - "SSSSS"
+        - "SSSSS"
+        - "SSoSS"
+        - "SsssS"
+        - "SsssS"
+        - " sss "
+      left:
+        map:
+        - " SSSSSS"
+        - "sssSSSS"
+        - "sssoSSS"
+        - "sssSSSS"
+        - " SSSSSS"
+  render:
+    looks: bvehicle_factory
+"&class": Unit
+...

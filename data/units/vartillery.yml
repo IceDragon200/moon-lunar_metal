@@ -1,0 +1,16 @@
+---
+traits:
+  tooltip:
+    name: Artillery
+    description: ""
+  unit_group:
+    type: vehicle
+  health:
+    hp: 150
+  mobile:
+    move: 4
+    terrain: land
+  render:
+    looks: vartillery
+"&class": Unit
+...

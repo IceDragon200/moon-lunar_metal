@@ -1,0 +1,41 @@
+---
+traits:
+  tooltip:
+    name: Ammunition Bay
+    description: ""
+  size:
+    directions:
+      right:
+        map:
+        - "SSSS "
+        - "SSSs."
+        - "SSSs."
+        - "SSSSS"
+        - "SSSSS"
+        - " SSSS"
+      up:
+        map:
+        - " ..SSS"
+        - "SssSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSS "
+      down:
+        map:
+        - " SSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSssS"
+        - "SSS.. "
+      left:
+        map:
+        - "SSSS "
+        - "SSSSS"
+        - "SSSSS"
+        - ".sSSS"
+        - ".sSSS"
+        - " SSSS"
+  render:
+    looks: bammo_bay
+"&class": Unit
+...

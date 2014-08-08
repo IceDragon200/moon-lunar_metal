@@ -1,0 +1,16 @@
+---
+traits:
+  tooltip:
+    name: Gunship
+    description: ""
+  unit_group:
+    type: aircraft
+  health:
+    hp: 200
+  mobile:
+    move: 4
+    terrain: air
+  render:
+    looks: agunship
+"&class": Unit
+...

@@ -1,0 +1,28 @@
+---
+traits:
+  tooltip:
+    name: Tank
+    description: ""
+  unit_group:
+    type: vehicle
+  health:
+    hp: 300
+  fueled:
+    fuel: 100
+    type: gas
+  energized:
+    energy: 10
+  mobile:
+    move: 4
+    terrain: land
+  armor:
+    type: heavy
+  abilities:
+  armaments:
+  - weapon: auto-10mm
+  valued:
+    cost: 500
+  render:
+    looks: vtank
+"&class": Unit
+...

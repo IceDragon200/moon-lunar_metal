@@ -1,0 +1,16 @@
+---
+traits:
+  tooltip:
+    name: Rocketeer
+    description: ""
+  unit_group:
+    type: infantry
+  health:
+    hp: 50
+  mobile:
+    move: 4
+    terrain: land
+  render:
+    looks: irocketeer
+"&class": Unit
+...
