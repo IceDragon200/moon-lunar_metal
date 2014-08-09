@@ -3,6 +3,7 @@ traits:
   tooltip:
     name: Raider
     description: ""
+    "&class": "Trait::Tooltip"
   unit_group:
     type: vehicle
   health:
@@ -12,5 +13,6 @@ traits:
     terrain: land
   render:
     looks: vraider
+    "&class": "Trait::Render"
 "&class": Unit
 ...

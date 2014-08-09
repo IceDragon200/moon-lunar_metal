@@ -3,6 +3,7 @@ traits:
   tooltip:
     name: Sniper
     description: ""
+    "&class": "Trait::Tooltip"
   unit_group:
     type: infantry
   health:
@@ -12,5 +13,6 @@ traits:
     terrain: land
   render:
     looks: isniper
+    "&class": "Trait::Render"
 "&class": Unit
 ...

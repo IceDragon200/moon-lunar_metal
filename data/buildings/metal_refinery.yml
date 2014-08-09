@@ -3,17 +3,20 @@ traits:
   tooltip:
     name: Metal Refinery
     description: ""
-  size:
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
     directions:
       right:
-        map:
         - "SSSSSS "
         - "SSSSSSs"
         - "SSSo.s "
         - "SSSSSSs"
         - "SSSSSS "
       up:
-        map:
         - " s s "
         - "SSsSS"
         - "SS.SS"
@@ -22,7 +25,6 @@ traits:
         - "SSSSS"
         - "SSSSS"
       down:
-        map:
         - "SSSSS"
         - "SSSSS"
         - "SSSSS"
@@ -31,13 +33,14 @@ traits:
         - "SSsSS"
         - " s s "
       left:
-        map:
         - " SSSSSS"
         - "sSSSSSS"
         - " s.oSSS"
         - "sSSSSSS"
         - " SSSSSS"
+    "&class": "Trait::Mapping"
   render:
     looks: bmetal_refinery
+    "&class": "Trait::Render"
 "&class": Unit
 ...

@@ -3,10 +3,14 @@ traits:
   tooltip:
     name: Ammunition Bay
     description: ""
-  size:
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
     directions:
       right:
-        map:
         - "SSSS "
         - "SSSs."
         - "SSSs."
@@ -14,28 +18,27 @@ traits:
         - "SSSSS"
         - " SSSS"
       up:
-        map:
         - " ..SSS"
         - "SssSSS"
         - "SSSSSS"
         - "SSSSSS"
         - "SSSSS "
       down:
-        map:
         - " SSSSS"
         - "SSSSSS"
         - "SSSSSS"
         - "SSSssS"
         - "SSS.. "
       left:
-        map:
         - "SSSS "
         - "SSSSS"
         - "SSSSS"
         - ".sSSS"
         - ".sSSS"
         - " SSSS"
+    "&class": "Trait::Mapping"
   render:
     looks: bammo_bay
+    "&class": "Trait::Render"
 "&class": Unit
 ...

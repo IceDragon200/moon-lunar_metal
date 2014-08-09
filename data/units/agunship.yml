@@ -3,6 +3,7 @@ traits:
   tooltip:
     name: Gunship
     description: ""
+    "&class": "Trait::Tooltip"
   unit_group:
     type: aircraft
   health:
@@ -12,5 +13,6 @@ traits:
     terrain: air
   render:
     looks: agunship
+    "&class": "Trait::Render"
 "&class": Unit
 ...

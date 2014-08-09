@@ -3,17 +3,20 @@ traits:
   tooltip:
     name: Medical Bay
     description: ""
-  size:
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
     directions:
       right:
-        map:
         - "SSSSS "
         - "SSSSS "
         - "SSSSo."
         - "SSSSS "
         - " SSSS "
       up:
-        map:
         - "  .  "
         - "SSoSS"
         - "SSSSS"
@@ -21,7 +24,6 @@ traits:
         - "SSSSS"
         - "SSSS "
       down:
-        map:
         - " SSSS"
         - "SSSSS"
         - "SSSSS"
@@ -29,13 +31,14 @@ traits:
         - "SSoSS"
         - "  .  "
       left:
-        map:
         - " SSSS "
         - " SSSSS"
         - ".oSSSS"
         - " SSSSS"
         - " SSSSS"
+    "&class": "Trait::Mapping"
   render:
     looks: bmed_bay
+    "&class": "Trait::Render"
 "&class": Unit
 ...

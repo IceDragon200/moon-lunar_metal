@@ -3,29 +3,32 @@ traits:
   tooltip:
     name: Energy Plant
     description: ""
-  size:
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
     directions:
       right:
-        map:
         - "SSS"
         - "SSS"
         - "SSS"
       up:
-        map:
         - "SSS"
         - "SSS"
         - "SSS"
       down:
-        map:
         - "SSS"
         - "SSS"
         - "SSS"
       left:
-        map:
         - "SSS"
         - "SSS"
         - "SSS"
+    "&class": "Trait::Mapping"
   render:
     looks: benergy_plant
+    "&class": "Trait::Render"
 "&class": Unit
 ...

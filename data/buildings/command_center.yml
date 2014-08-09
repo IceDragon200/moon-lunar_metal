@@ -3,10 +3,14 @@ traits:
   tooltip:
     name: Command Center
     description: ""
-  size:
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
     directions:
       right:
-        map:
         - " SSSS "
         - " SSSSS"
         - "SSSSSS"
@@ -15,7 +19,6 @@ traits:
         - " SSSSS"
         - " SSSS "
       up:
-        map:
         - " SSSSS "
         - "SSSSSSS"
         - "SSSSSSS"
@@ -23,7 +26,6 @@ traits:
         - "SSSSSSS"
         - "  SSS  "
       down:
-        map:
         - "  SSS  "
         - "SSSSSSS"
         - "SSSSSSS"
@@ -31,7 +33,6 @@ traits:
         - "SSSSSSS"
         - " SSSSS "
       left:
-        map:
         - " SSSS "
         - "SSSSS "
         - "SSSSSS"
@@ -39,7 +40,9 @@ traits:
         - "SSSSSS"
         - "SSSSS "
         - " SSSS "
+    "&class": "Trait::Mapping"
   render:
     looks: bcommand_center
+    "&class": "Trait::Render"
 "&class": Unit
 ...

@@ -3,6 +3,7 @@ traits:
   tooltip:
     name: Submarine
     description: ""
+    "&class": "Trait::Tooltip"
   unit_group:
     type: naval
   health:
@@ -12,5 +13,6 @@ traits:
     terrain: water
   render:
     looks: nsubmarine
+    "&class": "Trait::Render"
 "&class": Unit
 ...

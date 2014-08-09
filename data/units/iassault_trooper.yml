@@ -3,6 +3,7 @@ traits:
   tooltip:
     name: Assault Trooper
     description: ""
+    "&class": "Trait::Tooltip"
   unit_group:
     type: infantry
   health:
@@ -12,5 +13,6 @@ traits:
     terrain: land
   render:
     looks: iassault_trooper
+    "&class": "Trait::Render"
 "&class": Unit
 ...
