@@ -1,5 +1,6 @@
 class Camera < Moon::DataModel::Metal
   field :position, type: Moon::Vector2, default: proc{|t|t.new}
+  field :tilesize, type: Moon::Vector2, default: proc{|t|t.new(32, 32)}
   field :speed,    type: Integer,       default: 4
   field :ticks,    type: Integer,       default: 0
   field :obj,      type: Object,        allow_nil: true, default: nil
@@ -7,6 +8,10 @@ class Camera < Moon::DataModel::Metal
     Moon::Rect.new(-Moon::Screen.width/2, -Moon::Screen.height/2,
                     Moon::Screen.width/2,  Moon::Screen.height/2)
   end)
+
+  def post_init
+    super
+  end
 
   def follow(obj)
     @obj = obj
@@ -19,7 +24,7 @@ class Camera < Moon::DataModel::Metal
 
   def update(delta)
     if @obj
-      @position += (@obj.position * 32 - @position) * @speed * delta
+      @position += (@obj.position * @tilesize - @position) * @speed * delta
     end
     @ticks += 1
   end
