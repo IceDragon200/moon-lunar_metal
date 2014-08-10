@@ -1,5 +1,10 @@
 class MapCursor < Cursor
   include Moon::Eventable
+  include Moon::Activatable
+
+  def allow_event?(event)
+    active?
+  end
 
   def post_init
     super
