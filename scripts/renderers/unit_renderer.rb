@@ -35,11 +35,17 @@ class UnitRenderer < Moon::RenderContainer
       @ss = LunarMetal.cache.tileset(filename, cw, ch)
       self.width = @ss.cell_width
       self.height = @ss.cell_height
+      @sox = @ss.cell_width/2
+      @soy = @ss.cell_height/2
     elsif s_info = @visual_info.sprite
       @visual_info_frames = s_info["frames"]
       @s = Moon::Sprite.new(s_info.filename)
       self.width = @s.width
       self.height = @s.height
+      @sox = @s.width/2
+      @soy = @s.height/2
+      @s.ox = @sox
+      @s.oy = @soy
     end
   end
 
@@ -51,7 +57,7 @@ class UnitRenderer < Moon::RenderContainer
   def unit=(unit)
     @unit = unit
     if @unit && (r = @unit.traits["render"])
-      self.visual_info = LunarMetal.data.look(r["looks"])
+      self.visual_info = LunarMetal.data.look(r.looks)
     else
       self.visual_info = nil
     end
@@ -61,7 +67,10 @@ class UnitRenderer < Moon::RenderContainer
     return unless @visual_info_frames
     return unless @unit
     @anim_index += 1
-    frame = @visual_info_frames[@unit.frame]
+  end
+
+  def update_frame(delta)
+    frame = @visual_info_frames[@unit.frame_name]
     if frame
       @frame_index = frame[@anim_index % frame.size]
     else
@@ -75,14 +84,23 @@ class UnitRenderer < Moon::RenderContainer
       tick
       @anim_tick += @anim_tick_max
     end
+    update_frame(delta)
     super
   end
 
-  def render_elements(x, y, z, options={})
+  def render_unit_sprite(x, y, z, options={})
     if @ss
-      @ss.render(x, y, z, @frame_index, options)
+      @ss.render(x, y, z, @frame_index, options.merge(angle: @unit.angle, ox: @sox, oy: @soy))
     elsif @s
+      @s.angle = @unit.angle
       @s.render(x, y, z)
+    end
+  end
+
+  def render_elements(x, y, z, options={})
+    if @unit
+      px, py = *((@tilesize * @unit.cpos) + [x, y])
+      render_unit_sprite(px, py, z, options)
     end
     super
   end
