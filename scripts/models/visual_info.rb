@@ -1,7 +1,4 @@
-class SpritesheetInfo < Moon::DataModel::Metal
-  field :filename,    type: String,  default: ""
-  field :cell_width,  type: Integer, default: 32
-  field :cell_height, type: Integer, default: 32
+class UnitSpritesheetInfo < SpritesheetInfo
   field :frames,      type: {String=>Array},  default: proc{{}}
 end
 
