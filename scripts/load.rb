@@ -5,6 +5,7 @@ module LunarMetal
   class << self
     attr_accessor :cache
     attr_accessor :data
+    attr_accessor :texture
   end
 end
 
@@ -24,6 +25,7 @@ require 'scripts/act_interpreter'
 
 LunarMetal.cache = Cache.new
 LunarMetal.data = DataCache.new
+LunarMetal.texture = TextureCache.new
 
 State.push States::Title
 State.push States::Splash
