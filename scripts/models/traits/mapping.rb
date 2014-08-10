@@ -6,6 +6,8 @@ class Trait::Mapping < Trait
     strmap = {
       "s" => 1,
       "S" => 2,
+      "w" => 3,
+      "W" => 4,
       "." => 200,
       " " => 0,
       "o" => 50,
