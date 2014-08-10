@@ -40,6 +40,23 @@ module States
         @world.cursor.trigger(e)
       end
 
+      @test_unit = LunarMetal.data.unit("vtank")
+
+      @world.cursor.on :action do |_,s|
+        if unit = @game_controller.select_unit_at_pos(s.position)
+          @world.selected_unit = unit
+        elsif unit = @world.selected_unit
+          unit.add_order(Order::Move.new(target: s.position))
+        else
+          unit = @test_unit.to_game_unit # also a nice way to copy it :3
+          unit.cpos = s.position.dup
+          @game_controller.add_unit unit
+        end
+      end
+
+      @world.cursor.on :cancel do |_,s|
+        @world.selected_unit = nil
+      end
 
       @world.cursor.on :moved do |_,s|
         @map_view_controller.cursor_position = s.position
