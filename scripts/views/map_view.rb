@@ -30,11 +30,17 @@ class MapViewController
 
   def map=(map)
     @map = map
-    @view.tilemap.tileset = LunarMetal.cache.tileset(@map.tileset.filename,
-                                                     @map.tileset.cell_width,
-                                                     @map.tileset.cell_height)
-    @tilesize = Moon::Vector2[@view.tilemap.tileset.cell_width,
-                              @view.tilemap.tileset.cell_height]
+    filename = @map.tileset.filename
+    if @map.tileset.cell_sizes?
+      cw, ch = @map.tileset.cell_width, @map.tileset.cell_height
+    elsif @map.tileset.table?
+      t = LunarMetal.texture.tileset(filename)
+      cw, ch = t.width / @map.tileset.cols, t.height / @map.tileset.rows
+    else
+      raise "@map.tileset was neither cellular nor tabular"
+    end
+    @view.tilemap.tileset = LunarMetal.cache.tileset(filename, cw, ch)
+    @tilesize = Moon::Vector2[cw, ch]
     @view.tilemap.data = @map.data
     screct = Moon::Screen.rect
     @view.tilemap.view = Moon::Rect.new(-@tilesize.x, -@tilesize.y, screct.width + @tilesize.x, screct.height + @tilesize.y)
