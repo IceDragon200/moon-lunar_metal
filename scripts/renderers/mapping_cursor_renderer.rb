@@ -1,5 +1,5 @@
 class MappingCursorRenderer < Moon::RenderContainer
-  attr_reader :mapping
+  attr_reader :mapping # Table
 
   def init_elements
     super
@@ -21,10 +21,10 @@ class MappingCursorRenderer < Moon::RenderContainer
     if @mapping
       cw = @sprite.width
       ch = @sprite.height
-      @mapping.each_with_index do |row, iy|
+      @mapping.ysize.times do |iy|
         dy = iy * ch
-        row.each_with_index do |b, ix|
-          @sprite.render(x + ix * cw, y + dy, z) if b
+        @mapping.xsize.times do |ix|
+          @sprite.render(x + ix * cw, y + dy, z) if @mapping[ix, iy] > 0
         end
       end
     end
