@@ -39,6 +39,8 @@ module States
       frame, direction = @frames.value
       @model.unit.frame = frame
       @model.unit.direction = direction
+
+      @view.trigger(:unit_direction_change)
     end
 
     def update_unit
