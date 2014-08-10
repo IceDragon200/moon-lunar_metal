@@ -3,6 +3,7 @@ class UnitRenderer < Moon::RenderContainer
   attr_reader :visual_info_frames
   attr_reader :unit
   attr_accessor :frame_index
+  attr_accessor :tilesize
 
   def init_elements
     super
@@ -10,6 +11,7 @@ class UnitRenderer < Moon::RenderContainer
     @anim_tick_max = 15 / 60.0
     @anim_tick = 0
     @anim_index = 0
+    @tilesize = LunarMetal::System.tilesize
   end
 
   def refresh_visual_info
@@ -18,7 +20,19 @@ class UnitRenderer < Moon::RenderContainer
     return unless @visual_info
     if ss_info = @visual_info.spritesheet
       @visual_info_frames = ss_info["frames"]
-      @ss = LunarMetal.cache.tileset(ss_info.filename, ss_info.cell_width, ss_info.cell_height)
+
+      filename = ss_info.filename
+
+      if ss_info.cell_sizes?
+        cw, ch = ss_info.cell_width, ss_info.cell_height
+      elsif ss_info.table?
+        t = LunarMetal.texture.tileset(filename)
+        cw, ch = t.width / ss_info.cols, t.height / ss_info.rows
+      else
+        raise "ss_info was neither cellular nor tabular"
+      end
+
+      @ss = LunarMetal.cache.tileset(filename, cw, ch)
       self.width = @ss.cell_width
       self.height = @ss.cell_height
     elsif s_info = @visual_info.sprite
