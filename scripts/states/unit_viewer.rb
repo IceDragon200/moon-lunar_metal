@@ -2,12 +2,14 @@ module States
   class UnitViewer < Base
     def init
       super
-      @frames = ["sit_up", "sit_right", "sit_down", "sit_left",
-                 "move_up", "move_right", "move_down", "move_left",
-                 "dead"].to_linked_list.loop!
+      @frames = [["sit", "up"], ["sit", "right"], ["sit", "down"], ["sit", "left"],
+                 ["move", "up"], ["move", "right"], ["move", "down"], ["move", "left"],
+                 ["dead", "up"], ["dead", "right"], ["dead", "down"], ["dead", "left"]
+                 ].to_linked_list.loop!
 
       units = LunarMetal.data.entries(:unit).values
       units += LunarMetal.data.entries(:building).values
+      units.map!(&:to_game_unit)
       @model = UnitViewerModel.new
       @model.unit_node = units.to_linked_list.loop!
       @view = UnitViewerView.new
@@ -34,7 +36,9 @@ module States
     end
 
     def update_frame
-      @model.unit.frame = @frames.value
+      frame, direction = @frames.value
+      @model.unit.frame = frame
+      @model.unit.direction = direction
     end
 
     def update_unit
