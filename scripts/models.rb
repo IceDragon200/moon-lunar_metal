@@ -13,6 +13,7 @@ require 'scripts/models/cursor'
 require 'scripts/models/map_cursor'
 require 'scripts/models/camera'
 require 'scripts/models/map'
+require 'scripts/models/world'
 
 #
 require 'scripts/models/state_model'
