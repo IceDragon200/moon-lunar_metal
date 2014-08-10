@@ -1,0 +1,18 @@
+---
+# 8x is currently not supported
+#system.scale: "8x"
+#tilesize.x: 64
+#tilesize.y: 64
+###
+#system.scale: "4x"
+#tilesize.x: 32
+#tilesize.y: 32
+###
+system.scale: "2x"
+tilesize.x: 16
+tilesize.y: 16
+###
+#system.scale: "1x"
+#tilesize.x: 8
+#tilesize.y: 8
+...
