@@ -1,8 +1,8 @@
 ---
 spritesheet:
-  filename: "4x/unit-fighter_4x.png"
-  cell_width: 32
-  cell_height: 32
+  filename: ":system.scale:/unit-fighter.png"
+  cols: 4
+  rows: 1
   frames:
     sit_left:
     - 3
@@ -20,6 +20,6 @@ spritesheet:
     - 0
     move_down:
     - 2
-  "&class": SpritesheetInfo
+  "&class": UnitSpritesheetInfo
 "&class": VisualInfo
 ...

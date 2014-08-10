@@ -1,6 +1,6 @@
 ---
-filename: 4x/scifi_tileset-final_4x.png
-cell_width: 32
-cell_height: 32
+filename: :system.scale:/scifi_tileset-final.png
+cols: 32
+rows: 32
 "&class": Tileset
 ...
