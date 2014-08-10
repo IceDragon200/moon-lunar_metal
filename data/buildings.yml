@@ -4,7 +4,11 @@
 - command_center
 - energy_plant
 - fuel_bay
+- large_energy_plant
+- mech_bay
 - med_bay
 - metal_refinery
+- naval_factory
+- starport
 - vehicle_factory
 ...

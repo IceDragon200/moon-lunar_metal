@@ -1,0 +1,46 @@
+---
+traits:
+  tooltip:
+    name: Large Energy Plant
+    description: ""
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
+    directions:
+      right:
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+      up:
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+      down:
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+      left:
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+        - "SSSSSS"
+    "&class": "Trait::Mapping"
+  render:
+    looks: blarge_energy_plant
+    "&class": "Trait::Render"
+"&class": Unit
+...

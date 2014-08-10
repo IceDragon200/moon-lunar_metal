@@ -1,0 +1,44 @@
+---
+traits:
+  tooltip:
+    name: Mechanical Bay
+    description: ""
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
+    directions:
+      right:
+        - " SSSS "
+        - "SSsss."
+        - "SSsos."
+        - "SSsss."
+        - " SSSS "
+      up:
+        - " ... "
+        - "SsssS"
+        - "SsosS"
+        - "SsssS"
+        - "SSSSS"
+        - " SSS "
+      down:
+        - " SSS "
+        - "SSSSS"
+        - "SsssS"
+        - "SsosS"
+        - "SsssS"
+        - " ... "
+      left:
+        - " SSSS "
+        - ".sssSS"
+        - ".sosSS"
+        - ".sssSS"
+        - " SSSS "
+    "&class": "Trait::Mapping"
+  render:
+    looks: bmech_bay
+    "&class": "Trait::Render"
+"&class": Unit
+...

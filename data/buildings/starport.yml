@@ -1,0 +1,42 @@
+---
+traits:
+  tooltip:
+    name: Starport
+    description: ""
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
+    directions:
+      right:
+        - "SsSsS"
+        - "sooos"
+        - "SoooS"
+        - "sooos"
+        - "SsSsS"
+      up:
+        - "SsSsS"
+        - "sooos"
+        - "SoooS"
+        - "sooos"
+        - "SsSsS"
+      down:
+        - "SsSsS"
+        - "sooos"
+        - "SoooS"
+        - "sooos"
+        - "SsSsS"
+      left:
+        - "SsSsS"
+        - "sooos"
+        - "SoooS"
+        - "sooos"
+        - "SsSsS"
+    "&class": "Trait::Mapping"
+  render:
+    looks: bstarport
+    "&class": "Trait::Render"
+"&class": Unit
+...

@@ -1,0 +1,29 @@
+---
+spritesheet:
+  filename: ":system.scale:/building--lunar-large_energy_plant.png"
+  cols: 4
+  rows: 4
+  frames:
+    sit_left:
+    - 3
+    - 7
+    - 11
+    - 15
+    sit_right:
+    - 1
+    - 5
+    - 9
+    - 13
+    sit_up:
+    - 0
+    - 4
+    - 8
+    - 12
+    sit_down:
+    - 2
+    - 6
+    - 10
+    - 14
+  "&class": UnitSpritesheetInfo
+"&class": VisualInfo
+...

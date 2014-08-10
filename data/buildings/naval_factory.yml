@@ -1,0 +1,52 @@
+---
+traits:
+  tooltip:
+    name: Naval Factory
+    description: ""
+    "&class": "Trait::Tooltip"
+  static:
+    "&class": "Trait::Static"
+  unit_group:
+    type: building
+  mapping:
+    directions:
+      right:
+        - "WWWW W  "
+        - "WWWWWWWw"
+        - "WWWWWww "
+        - "WWWWWow "
+        - "WWWWWww "
+        - "WWWWWWWw"
+        - "WWWW W  "
+      up:
+        - " w   w "
+        - " WwwwW "
+        - "WWwowWW"
+        - " WWWWW "
+        - "WWWWWWW"
+        - "WWWWWWW"
+        - "WWWWWWW"
+        - "WWWWWWW"
+      down:
+        - "WWWWWWW"
+        - "WWWWWWW"
+        - "WWWWWWW"
+        - "WWWWWWW"
+        - " WWWWW "
+        - "WWwowWW"
+        - " WwwwW "
+        - " w   w "
+      left:
+        - "  W WWWW"
+        - "wWWWWWWW"
+        - " wwWWWWW"
+        - " woWWWWW"
+        - " wwWWWWW"
+        - "wWWWWWWW"
+        - "  W WWWW"
+    "&class": "Trait::Mapping"
+  render:
+    looks: bnaval_factory
+    "&class": "Trait::Render"
+"&class": Unit
+...
