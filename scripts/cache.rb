@@ -1,8 +1,10 @@
+require 'std/palette_parser'
+
 class LunarCache < Moon::CacheBase
   @@substitution_dict = {}
 
   def escape_filename(filename)
-    filename.gsub(/:(.*):/) { @@substitution_dict[$1] }
+    filename.gsub(/:(.+):/) { @@substitution_dict[$1] }
   end
 
   def self.regenerate_sub_dict
@@ -15,15 +17,17 @@ end
 class Cache < LunarCache
   cache def tileset(filename, cw, ch)
     filename = escape_filename(filename)
-    Moon::Spritesheet.new("resources/tilesets/#{filename}", cw, ch)
+    puts "Loading Tileset: #{filename} [#{cw}, #{ch}]"
+    texture = LunarMetal.texture.tileset(filename)
+    Moon::Spritesheet.new(texture, cw, ch)
   end
 
   cache def font(filename, size)
     filename = escape_filename(filename)
     @font_map ||= {
-      "handel_gothic" => "Handel Gothic.ttf",
-      "uni0553" => "uni0553/uni0553-webfont.ttf",
-      "system"  => "uni0553/uni0553-webfont.ttf",
+      'handel_gothic' => 'Handel Gothic.ttf',
+      'uni0553' => 'uni0553/uni0553-webfont.ttf',
+      'system'  => 'uni0553/uni0553-webfont.ttf',
     }
 
     filename = @font_map[filename] || filename
@@ -32,46 +36,62 @@ class Cache < LunarCache
 end
 
 class TextureCache < LunarCache
-  cache def tileset(filename)
+  private def load_texture(filename)
     filename = escape_filename(filename)
-    Moon::Texture.new("resources/tilesets/#{filename}")
+    Moon::Texture.new("resources/#{filename}")
+  end
+
+  cache def resource(filename)
+    load_texture(filename)
+  end
+
+  cache def tileset(filename)
+    load_texture("tilesets/#{filename}")
+  end
+
+  cache def ui(filename)
+    load_texture("ui/#{filename}")
   end
 end
 
 class DataCache < LunarCache
+  def serializer
+    Moon::DataSerializer
+  end
+
   cache def palette(*)
-    PaletteParser.load_palette(DataLoader.file("palette"))
+    Moon::PaletteParser.load_palette(Moon::DataLoader.file('palette'))
   end
 
   cache def armor(filename)
-    DataSerializer.load_file("armors/#{filename}")
+    serializer.load_file("armors/#{filename}")
   end
 
   cache def building(filename)
-    DataSerializer.load_file("buildings/#{filename}")
+    serializer.load_file("buildings/#{filename}")
   end
 
   cache def faction(filename)
-    DataSerializer.load_file("factions/#{filename}")
+    serializer.load_file("factions/#{filename}")
   end
 
   cache def look(filename)
-    DataSerializer.load_file("looks/#{filename}")
+    serializer.load_file("looks/#{filename}")
   end
 
   cache def map(filename)
-    DataSerializer.load_file("maps/#{filename}")
+    serializer.load_file("maps/#{filename}")
   end
 
   cache def tileset(filename)
-    DataSerializer.load_file("tilesets/#{filename}")
+    serializer.load_file("tilesets/#{filename}")
   end
 
   cache def unit(filename)
-    DataSerializer.load_file("units/#{filename}")
+    serializer.load_file("units/#{filename}")
   end
 
   cache def weapon(filename)
-    DataSerializer.load_file("weapons/#{filename}")
+    serializer.load_file("weapons/#{filename}")
   end
 end
