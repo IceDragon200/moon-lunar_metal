@@ -35,8 +35,8 @@ class GameController
     remove_unit(unit)
   end
 
-  def select_unit_at_pos(position, threshold=nil)
-    threshold ||= Moon::Vector2.new(0.2, 0.2)
+  def select_unit_at_pos(position, threshold = nil)
+    threshold ||= 0.5
     @model.units.find do |unit|
       unit.cpos.near?(position, threshold)
     end
