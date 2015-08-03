@@ -2,7 +2,7 @@ module Moon
   module DataModel
     class Metal
       def copy
-        self.class.new.set(self.to_h)
+        self.class.new.import(export)
       end
     end
   end
