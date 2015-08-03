@@ -1,5 +1,5 @@
 module MovementSystem
-  include Moon::System
+  include Moon::EntitySystem::System
 
   def process(delta, world)
   end
