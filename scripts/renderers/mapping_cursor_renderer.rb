@@ -1,7 +1,7 @@
 class MappingCursorRenderer < Moon::RenderContainer
   attr_reader :mapping # Table
 
-  def init_elements
+  def initialize_elements
     super
     @mapping = nil
     ts = LunarMetal::System.tilesize

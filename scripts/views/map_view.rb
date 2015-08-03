@@ -3,7 +3,7 @@ class MapView < StateView
   attr_reader :cursor  # CursorRenderer
   attr_reader :units   # RenderArray<UnitRenderer>
 
-  def init_elements
+  def initialize_elements
     super
     @tilemap = Moon::Tilemap.new
     @cursor = CursorRenderer.new

@@ -1,5 +1,5 @@
 class CursorRenderer < Moon::RenderContainer
-  def init_elements
+  def initialize_elements
     super
     ts = LunarMetal::System.tilesize
     @sprite = Moon::Sprite.new("resources/ui/map_editor_cursor_#{ts.x.to_i}x#{ts.y.to_i}_ffffffff.png")

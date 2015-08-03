@@ -12,7 +12,7 @@ class ResourcesHud < Moon::RenderContainer
   attr_reader :energy_text
   attr_reader :metal_text
 
-  def init_elements
+  def initialize_elements
     super
     @background = Moon::SkinSlice3.new
     @background.windowskin = Moon::Spritesheet.new("resources/ui/hud_band_48x48_top.png", 48, 48)
@@ -46,7 +46,7 @@ class MapUiView < StateView
   attr_reader :unit_count_text
   attr_reader :resources
 
-  def init_elements
+  def initialize_elements
     super
     font = LunarMetal.cache.font("uni0553", 16)
     @unit_action = UnitActionHud.new

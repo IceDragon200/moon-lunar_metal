@@ -5,7 +5,7 @@ class UnitRenderer < Moon::RenderContainer
   attr_accessor :frame_index
   attr_accessor :tilesize
 
-  def init_elements
+  def initialize_elements
     super
     @frame_index = 0
     @anim_tick_max = 15 / 60.0

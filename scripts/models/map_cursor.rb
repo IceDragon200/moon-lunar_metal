@@ -6,15 +6,13 @@ class MapCursor < Cursor
     active?
   end
 
-  def post_init
+  def post_initialize
     super
-    init_eventable
-    init_events
+    initialize_eventable
+    initialize_events
   end
 
-  def init_events
-    alias_event(:held, :repeat)
-    alias_event(:held, :press)
+  def initialize_events
 
     action = :z
     cancel = :x

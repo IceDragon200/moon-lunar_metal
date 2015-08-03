@@ -13,7 +13,7 @@ class GameController
   attr_reader :model # World
 
   def initialize(model)
-    init_eventable
+    initialize_eventable
     @model = model
   end
 
