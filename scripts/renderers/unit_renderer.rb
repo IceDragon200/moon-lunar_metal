@@ -24,26 +24,26 @@ class UnitRenderer < Moon::RenderContainer
       filename = ss_info.filename
 
       if ss_info.cell_sizes?
-        cw, ch = ss_info.cell_width, ss_info.cell_height
+        cw, ch = ss_info.cell_w, ss_info.cell_h
       elsif ss_info.table?
         t = LunarMetal.texture.tileset(filename)
-        cw, ch = t.width / ss_info.cols, t.height / ss_info.rows
+        cw, ch = t.w / ss_info.cols, t.h / ss_info.rows
       else
         raise "ss_info was neither cellular nor tabular"
       end
 
       @ss = LunarMetal.cache.tileset(filename, cw, ch)
-      self.width = @ss.cell_width
-      self.height = @ss.cell_height
-      @sox = @ss.cell_width/2
-      @soy = @ss.cell_height/2
+      self.w = @ss.w
+      self.h = @ss.h
+      @sox = @ss.w / 2
+      @soy = @ss.h / 2
     elsif s_info = @visual_info.sprite
       @visual_info_frames = s_info["frames"]
       @s = Moon::Sprite.new(s_info.filename)
-      self.width = @s.width
-      self.height = @s.height
-      @sox = @s.width/2
-      @soy = @s.height/2
+      self.w = @s.w
+      self.h = @s.h
+      @sox = @s.w / 2
+      @soy = @s.h / 2
       @s.ox = @sox
       @s.oy = @soy
     end
@@ -88,19 +88,14 @@ class UnitRenderer < Moon::RenderContainer
     super
   end
 
-  def render_unit_sprite(x, y, z, options={})
-    if @ss
-      @ss.render(x, y, z, @frame_index, options.merge(angle: @unit.angle, ox: @sox, oy: @soy))
-    elsif @s
-      @s.angle = @unit.angle
-      @s.render(x, y, z)
-    end
-  end
-
   def render_elements(x, y, z, options={})
     if @unit
-      px, py = *((@tilesize * @unit.cpos) + [x, y])
-      render_unit_sprite(px, py, z, options)
+      if @ss
+        @ss.render(x, y, z, @frame_index, options.merge(angle: @unit.angle, ox: @sox, oy: @soy))
+      elsif @s
+        @s.angle = @unit.angle
+        @s.render(x, y, z)
+      end
     end
     super
   end

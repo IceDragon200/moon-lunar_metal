@@ -6,6 +6,9 @@ class MappingCursorRenderer < Moon::RenderContainer
     @mapping = nil
     ts = LunarMetal::System.tilesize
     @sprite = Moon::Sprite.new("resources/ui/map_editor_cursor_#{ts.x.to_i}x#{ts.y.to_i}_ffffffff.png")
+
+    self.w = @sprite.w
+    self.h = @sprite.h
   end
 
   def refresh_mapping
@@ -17,10 +20,10 @@ class MappingCursorRenderer < Moon::RenderContainer
     refresh_mapping
   end
 
-  def render_elements(x, y, z, options={})
+  def render_elements(x, y, z, options)
     if @mapping
-      cw = @sprite.width
-      ch = @sprite.height
+      cw = @sprite.w
+      ch = @sprite.h
       @mapping.ysize.times do |iy|
         dy = iy * ch
         @mapping.xsize.times do |ix|
