@@ -1,29 +1,29 @@
 class TitleController < StateController
   def campaign
-    State.push(States::Campaign)
+    state_manager.push(States::Campaign)
   end
 
   def skirmish
-    State.push(States::Skirmish)
+    state_manager.push(States::Skirmish)
   end
 
   def load_game
-    State.push(States::LoadGame)
+    state_manager.push(States::LoadGame)
   end
 
   def options
-    State.push(States::Options)
+    state_manager.push(States::Options)
   end
 
   def map
-    State.push(States::Map)
+    state_manager.push(States::Map)
   end
 
   def unit_viewer
-    State.push(States::UnitViewer)
+    state_manager.push(States::UnitViewer)
   end
 
   def quit
-    exit
+    state.engine.quit
   end
 end
