@@ -13,36 +13,43 @@ class MapCursor < Cursor
   end
 
   def initialize_events
+    held = [:press, :repeat]
 
-    action = :z
-    cancel = :x
+    action = [:z, :mouse_right]
+    cancel = [:x]
+    select = [:c, :mouse_left]
 
-    on :held, :left do
-      self.position -= [1, 0]
+    on :mousemove_on_map do |e|
+      self.position = e.map_position
       trigger :moved
     end
 
-    on :held, :right do
-      self.position += [1, 0]
-      trigger :moved
+    on held do |e|
+      case e.key
+      when :left
+        self.position -= [1, 0]
+        trigger :moved
+      when :right
+        self.position += [1, 0]
+        trigger :moved
+      when :up
+        self.position -= [0, 1]
+        trigger :moved
+      when :down
+        self.position += [0, 1]
+        trigger :moved
+      end
     end
 
-    on :held, :up do
-      self.position -= [0, 1]
-      trigger :moved
-    end
-
-    on :held, :down do
-      self.position += [0, 1]
-      trigger :moved
-    end
-
-    on :press, action do
-      trigger :action
-    end
-
-    on :press, cancel do
-      trigger :cancel
+    on :press do |e|
+      case e.key
+      when *action
+        trigger :action
+      when *cancel
+        trigger :cancel
+      when *select
+        trigger :select
+      end
     end
   end
 end

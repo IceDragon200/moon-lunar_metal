@@ -1,11 +1,11 @@
 class World < Moon::DataModel::Metal
   field :map,         type: Map,         default: nil
   array :teams,       type: Team
-  field :player_team, type: String,      default: ""
+  field :player_team, type: String,      default: ''
   array :units,       type: GameUnit
   field :unit_map,    type: Moon::Table, default: nil
-  field :cursor,      type: MapCursor,   default: proc{|t|t.new}
-  field :camera,      type: Camera,      default: proc{|t|t.new}
+  field :cursor,      type: MapCursor,   default: proc { |t| t.model.new }
+  field :camera,      type: Camera2,     default: nil
 
   field :selected_unit, type: GameUnit,  default: nil
 

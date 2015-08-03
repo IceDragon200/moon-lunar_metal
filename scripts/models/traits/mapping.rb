@@ -4,13 +4,13 @@ class Trait::Mapping < Trait
 
   def generate_mappings
     strmap = {
-      "s" => 1,
-      "S" => 2,
-      "w" => 3,
-      "W" => 4,
-      "." => 200,
-      " " => 0,
-      "o" => 50,
+      's' => 1,
+      'S' => 2,
+      'w' => 3,
+      'W' => 4,
+      '.' => 200,
+      ' ' => 0,
+      'o' => 50,
     }
 
     directions.each_with_object({}) do |a, r|
@@ -22,7 +22,7 @@ class Trait::Mapping < Trait
       end
       ysize = v.size
       table = Moon::Table.new(xsize, ysize)
-      table.set_from_strmap(v.join(""), strmap)
+      table.set_from_strmap(v.join(''), strmap)
       r[k] = table
     end
   end
