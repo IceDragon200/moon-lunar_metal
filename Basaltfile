@@ -1,0 +1,25 @@
+set pkgdir: 'packages'
+
+pkg 'data_bags'                       # Table and DataMatrix classes
+pkg 'data_model'                      # DataModel module
+pkg 'dataman'                         # DataManager module
+pkg 'entity_system'                   # Moon Entity System module
+pkg 'es'                              # ES modules
+pkg 'link_node'                       # Linked list module
+pkg 'lunar'                           # LunarMetal modules
+pkg 'lunar_ui'                        # UI Elements module
+pkg 'moon-boolean'                    # Boolean
+pkg 'moon-inflector'                  # Inflections
+pkg 'moon-logfmt'
+pkg 'moon-mock'                       # Mock classes
+pkg 'moon-null_io'
+pkg 'moon-prototype'                  # class variable like attributes
+pkg 'moon-safe_copy'                  # #safe_dup and #safe_clone
+pkg 'moon-serializable'               # serialization api
+#pkg 'nui'                             # Nanovg UI framework
+pkg 'render_primitives', with: ['ui'] # Rendering utility module
+pkg 'scheduler'                       # Scheduler
+pkg 'state_middleware'                # Middleware
+pkg 'state_mvc'                       # State M(odel) V(iew) C(ontroller) module
+pkg 'std'                             # moon standard library
+pkg 'twod'                            # 2D utility module
