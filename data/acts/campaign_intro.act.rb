@@ -1,0 +1,2 @@
+clear_page
+add_text
