@@ -6,8 +6,10 @@ class MapView < StateView
   def initialize_elements
     super
     @tilemap = Moon::Tilemap.new
-    @cursor = CursorRenderer.new
-    @units = RenderArray.new
+    @cursor = MappingCursorRenderer.new
+    @units = Moon::RenderArray.new
+
+    @cursor.mapping = Moon::Table.new(1, 1, default: 1)
 
     add(@tilemap)
     add(@cursor)
@@ -34,6 +36,14 @@ class MapViewController
     @view.units.position = campos
   end
 
+  def cursor_mapping=(mapping)
+    if mapping
+      @view.cursor.mapping = mapping
+    else
+      @view.cursor.mapping = Table.new(1, 1, default: 1)
+    end
+  end
+
   def map=(map)
     @map = map
     filename = @map.tileset.filename
@@ -43,7 +53,7 @@ class MapViewController
       t = LunarMetal.texture.tileset(filename)
       cw, ch = t.width / @map.tileset.cols, t.height / @map.tileset.rows
     else
-      raise "@map.tileset was neither cellular nor tabular"
+      raise '@map.tileset was neither cellular nor tabular'
     end
     @view.tilemap.tileset = LunarMetal.cache.tileset(filename, cw, ch)
     @tilesize = Moon::Vector2[cw, ch]
@@ -77,7 +87,7 @@ class MapViewController
   end
 
   def add_unit(unit)
-    @view.units << (UnitRenderer.new.tap { |r| r.unit = unit })
+    @view.units << (UnitNodeRenderer.new.tap { |r| r.unit = unit })
   end
 
   def remove_unit(unit)

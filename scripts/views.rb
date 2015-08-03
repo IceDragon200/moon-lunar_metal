@@ -1,6 +1,6 @@
-require "scripts/views/state_view"
-require "scripts/views/combat_hud_view"
-require "scripts/views/combat_world_view"
-require "scripts/views/map_view"
-require "scripts/views/map_ui_view"
-require "scripts/views/unit_viewer_view"
+require 'scripts/views/state_view'
+require 'scripts/views/combat_hud_view'
+require 'scripts/views/combat_world_view'
+require 'scripts/views/map_view'
+require 'scripts/views/map_ui_view'
+require 'scripts/views/unit_viewer_view'
