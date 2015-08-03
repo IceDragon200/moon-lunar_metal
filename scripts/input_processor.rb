@@ -11,6 +11,7 @@ class InputProcessor
       @input.on :press, key do
         @click_table[key] = true
       end
+
       @input.on :release, key do |*a|
         if @click_table[key]
           block.call(*a)
@@ -18,7 +19,7 @@ class InputProcessor
         end
       end
     else
-      @input.on(:feature, *args, &block)
+      @input.on(feature, *args, &block)
     end
   end
 end
